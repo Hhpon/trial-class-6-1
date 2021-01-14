@@ -2,10 +2,14 @@ from openpyxl import load_workbook
 from openpyxl import Workbook
 # 1、读取数据
 workbook = load_workbook("openpyxl/作业-原始成绩.xlsx")
-workbook.sheetnames
+# workbook.sheetnames
+print(workbook.sheetnames)
 sheet = workbook["Sheet1"]
 # sheet.dimensions查看表格的维度
-cell = sheet["A2:G27"]
+print(sheet.dimensions)
+# cell = sheet["A2:G27"]
+cell = sheet[sheet.dimensions]
+# print(cell)
 # 2、提取表格中的数据
 y = []
 for i in cell:
@@ -14,8 +18,7 @@ for i in cell:
         x.append(j.value)
         xx = x[:1]+x[4:]
     y.append(xx)
-# 3、清洗数据，将清洗好的数据写入表格
-write = []
+
 # 新建一个空白的excel表格
 workbook = Workbook()
 sheet1 = workbook.active
@@ -23,6 +26,7 @@ sheet1.title = "表格1"
 sheet1.append(["学号", "姓名", "检测", "讨论", "成绩"])
 # 数据清洗
 for xx in y:
+    print(xx)
     try:
         # 提取学号
         xuehao = xx[0][5:13]
