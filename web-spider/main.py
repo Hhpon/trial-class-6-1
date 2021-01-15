@@ -22,4 +22,4 @@ c = (Map()
         {"max": 9, "min": 1, "label": "1-9", "color": "#F5A9A9"},
     ]),
 )
-    .render("web-spider-map.html"))
+    .render("web-spider/web-spider-map.html"))
