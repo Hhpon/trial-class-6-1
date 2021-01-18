@@ -1,6 +1,7 @@
 body {
   background-color: rgba(243, 243, 243);
 }
+
 .title {
   width: 100%;
   text-align: center;
@@ -20,81 +21,39 @@ body {
 }
 
 .container {
-  height: auto;
-  width: 100%;
   border: 1px solid rgb(128, 117, 117, 0.5);
   border-radius: 5px;
   background-color: white;
+  padding: 5px;
 }
 
-.container1 {
-  margin: 0px 10px;
+.sub-title {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
-.box {
-  font-size: 40px;
-  font-weight: bold;
+.main_content {
+  display: flex;
+}
+
+.item {
+  display: flex;
+  flex: 1;
+  margin: 3px 0;
+}
+
+.info_left {
+  flex: 0 0 80%;
+}
+
+.info_right {
+  text-align: right;
+  flex: 1;
+}
+
+.tips {
+  font-size: 14px;
   text-align: center;
-}
-
-.box2 {
-  font-size: 15px;
-  color: rgb(38, 38, 172);
-}
-
-.box3 {
-  height: auto;
-  width: 100%;
-  display: flex;
-}
-
-.box4 {
-  height: 30px;
-  font-size: 20px;
-  border-bottom: 1px solid rgb(128, 117, 117, 0.5);
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.box5 {
-  width: 40%;
-  margin: 10px 0px;
-  display: flex;
-  flex-direction: column;
-}
-
-.box6 {
-  width: 35%;
-  margin: 10px 0px;
-  display: flex;
-  flex-direction: column;
-}
-
-.box7 {
-  width: 25%;
-  margin: 10px 0px;
-  display: flex;
-  flex-direction: column;
-}
-
-.box10 {
-  height: 30px;
-  font-size: 20px;
-  color: rgba(7, 7, 70, 0.74);
-}
-.box11 {
-  height: 30px;
-  font-size: 20px;
-  border-bottom: 1px solid rgb(128, 117, 117, 0.5);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 5px 12px 0;
-}
-.item1 {
-  margin: 0px;
-  max-width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  border-bottom: 1px solid rgb(128, 117, 117, 0.5);
-  justify-content: space-between;
+  color: #9b9898;
 }

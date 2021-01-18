@@ -8,44 +8,39 @@
   </head>
 
   <body>
-    <div class="in">
+    <div id="app">
       <div>
         <div class="title">志愿时长查询</div>
         <div class="index1">
           <div class="index2">
-            <input type="text" placeholder="请输入学号" />
-            <button>搜索</button>
+            <input type="text" placeholder="请输入学号" v-model="key" />
+            <button @click="getVolunteers()">搜索</button>
           </div>
         </div>
       </div>
       <div>
-        <div class="container">
-          <div class="box11">2018-2019学年秋</div>
-          <div class="container1">
-            <div class="box3">
-              <div class="box5">
-                <div class="box4">学号</div>
-                <div class="box4">A89739228</div>
-              </div>
-              <div class="box6">
-                <div class="box4">项目名称</div>
-                <div class="box4">善行一百</div>
-              </div>
-              <div class="box7">
-                <div class="box4">服务时长</div>
-                <div class="box4">15</div>
-              </div>
-            </div>
-            <div class="item1">
-              <div class="box10">获得学分</div>
-              <div class="box10">40</div>
+        <div class="container" v-if="volunteers.length">
+          <div class="sub-title">2017-2018-2学年</div>
+          <div class="item">
+            <div class="info_left">项目名称</div>
+            <div class="info_right">单项时长</div>
+          </div>
+          <div class="main_content">
+            <div class="item" v-for="(item,index) in volunteers" :key="index">
+              <div class="info_left">{{item.service}}</div>
+              <div class="info_right">{{item.duration}}</div>
             </div>
           </div>
+          <div class="item">
+            <div class="info_left">总时长</div>
+            <div class="info_right">{{totalDuration}}</div>
+          </div>
         </div>
+        <div v-else class="tips">请输入学号查询志愿时长~</div>
       </div>
     </div>
-    <script src="./index.js">
-
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
